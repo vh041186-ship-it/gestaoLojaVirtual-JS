@@ -6,6 +6,7 @@ export const pedidos = [];
 
 export function criarPedido(pedido)
 {
+    const numero = Math.floor(Math.random() * 100) + 1;
     const nomeCliente = pedido.clientes.find(n => n.id === 1)
     const {email, id, ...nome} = nomeCliente
     const recebePedido = car.carrinho.map(a => {
@@ -36,7 +37,7 @@ export function pedidosPendentes()
 }
 export function cancelarPedido()
 {
-    const procurar = 1
+    const procurar = 1;
     const pedidoId = pedidos.find(a => a.id === procurar)
     if(pedidoId.status !== "Cancelado")
     {
