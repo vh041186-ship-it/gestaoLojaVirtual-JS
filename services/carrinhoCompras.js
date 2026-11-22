@@ -5,12 +5,13 @@ import * as validCatalogo from "../validators/validationProdutos.js"
 {
     if(validCatalogo.validacaoProdutos(produto))
     {
+        const quantidade = 3;
         console.log("Produto adicionado ao carrinho");
         const itens = produto.produtos.map(a => {
             return{
                 nome: a.nome,
                 preco: a.preco,
-                quantidade: 3           
+                quantidade: quantidade           
             }
         })
         carrinho.push(...itens);

@@ -2,7 +2,7 @@ export function validarNome(loja)
 {
     const erros = [];
     loja.clientes.forEach(a => {
-        if(typeof a.nome !== "string" || a.nome.trim() === "" || a.nome.lenght <= 0)
+        if(typeof a.nome !== "string" || a.nome.trim() === ""|| a.nome.lenght <= 0)
         {
             erros.push("Nome Invalido");
         }
@@ -26,13 +26,11 @@ export function validarEmail(loja)
 }
 export function validarId(id)
 {
-    let validadorId = true
     id.clientes.forEach(a => {
-        if(typeof a.id !== "number" || Number.isInteger(a.id) || a.id < 0)
+        if(typeof a.id !== "number" || !Number.isInteger(a.id) || a.id < 0)
         {
-            return validadorId = false;
+            return false;
         }
-        
     });
-    return validadorId = true;
+    return true;
 }

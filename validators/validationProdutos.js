@@ -15,35 +15,30 @@ export function validacaoProdutos(prod)
     prod.produtos.forEach(p => {
             if(typeof p.nome !== "string" || p.nome.trim() === "" || p.nome.lenght === 0)
     {
-        erros.push = ("Nome do produto invalido");
+        erros.push("Nome do produto invalido");
         return false;
     }
     if(typeof p.id !== "number" || !Number.isInteger(p.id) || p.id <= 0)
     {
-        erros.push = ("Id do produto invalido");
+        erros.push("Id do produto invalido");
         return false;
     }
     if(typeof p.preco !== "number" || !Number.isFinite(p.preco) || p.preco <= 0)
     {
-        erros.push = ("O preco e invalido");
+        erros.push("O preco e invalido");
         return false;
     }
     if(typeof p.estoque !== "number" || !Number.isInteger(p.estoque) || p.estoque < 0)
     {
-        erros.push = ("Quantidade em estoque invalida");
+        erros.push("Quantidade em estoque invalida");
         return false;
     }
     if(typeof p.categoria !== "string" || p.categoria.lenght === 0 || p.categoria.trim() === "")
     {
-        erros.push = ("Categoria invalida");
+        erros.push("Categoria invalida");
         return false;
         
     }
     });
     return true;
-}
-export function nomePadrao(l)
-{
-    const nomePadrao = l.cliente[0]?.nome ?? "Usuario"
-    return nomePadrao;
 }

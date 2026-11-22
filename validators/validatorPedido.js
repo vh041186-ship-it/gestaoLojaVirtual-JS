@@ -11,5 +11,5 @@ export function validarPedido(verficar)
             return false;
         }
     })
-    return pedidos;;
+    return pedidos;
 }

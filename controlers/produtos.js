@@ -37,7 +37,7 @@ export function filtroCategoria(produto)
         console.log("Filtrado por categoria")
         const filtrados = produto.produtos.filter(a => a.categoria === "Periféricos")
        const mostrarPublicos = filtrados.map(a => {
-        const [{id, estoque, ...publicos}] = filtrados;
+        const {id, estoque, ...publicos} = a;
         return publicos 
        });
         return mostrarPublicos;
@@ -51,7 +51,7 @@ export function filtroFaixaPreco(produto)
         console.log("Filtrado por faixa de preço");
         const filtradosPreco = produto.produtos.filter(a =>  a.preco < 200)
        const mostraPublicos = filtradosPreco.map(a => {
-         const [{id, estoque, ...publicos}] = filtradosPreco
+         const {id, estoque, ...publicos} = a;
          return publicos;
        })
         return mostraPublicos;
